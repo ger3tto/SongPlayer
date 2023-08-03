@@ -391,13 +391,13 @@ public class SongHandler {
     public void restoreStateAndCleanUp() {
         if (stage != null) {
             stage.movePlayerToStagePosition();
-        }
+        }                                                                                                        
         if (originalGamemode != SongPlayer.MC.interactionManager.getCurrentGameMode()) {
             if (originalGamemode == GameMode.CREATIVE) {
-                sendGamemodeCommand(Config.getConfig().creativeCommand);
+                sendMessage(Config.getConfig().creativeCommand);
             }
             else if (originalGamemode == GameMode.SURVIVAL) {
-                sendGamemodeCommand(Config.getConfig().survivalCommand);
+                sendMessage(Config.getConfig().survivalCommand);
             }
         }
         restoreBuildSlot();
@@ -440,13 +440,13 @@ public class SongHandler {
     private void setCreativeIfNeeded() {
         cachedCommand = null;
         if (SongPlayer.MC.interactionManager.getCurrentGameMode() != GameMode.CREATIVE) {
-            sendGamemodeCommand(Config.getConfig().creativeCommand);
+            sendMessage(Config.getConfig().creativeCommand);
         }
     }
     private void setSurvivalIfNeeded() {
         cachedCommand = null;
         if (SongPlayer.MC.interactionManager.getCurrentGameMode() != GameMode.SURVIVAL) {
-            sendGamemodeCommand(Config.getConfig().survivalCommand);
+            sendMessage(Config.getConfig().survivalCommand);
         }
     }
 
